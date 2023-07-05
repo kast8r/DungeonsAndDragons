@@ -47,15 +47,17 @@ public class MasterMain extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        btnMap = new javax.swing.JLabel();
+        btnPlayersRoom = new javax.swing.JLabel();
+        btnWeapons = new javax.swing.JLabel();
+        btnItems = new javax.swing.JLabel();
+        btnArmor = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 700));
         jPanel1.setLayout(null);
@@ -73,54 +75,88 @@ public class MasterMain extends javax.swing.JFrame {
         jPanel1.add(jSeparator2);
         jSeparator2.setBounds(0, 350, 610, 30);
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("<html><u>Mapa</u></html>");
-        jLabel4.setOpaque(true);
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(820, 480, 220, 70);
+        btnMap.setBackground(new java.awt.Color(0, 0, 0));
+        btnMap.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        btnMap.setForeground(new java.awt.Color(255, 255, 255));
+        btnMap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMap.setText("<html><u>Mapa</u></html>");
+        btnMap.setOpaque(true);
+        btnMap.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMapMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnMap);
+        btnMap.setBounds(820, 480, 220, 70);
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("<html><u>Sala de jugadores</u></html>");
-        jLabel5.setOpaque(true);
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 130, 270, 70);
+        btnPlayersRoom.setBackground(new java.awt.Color(0, 0, 0));
+        btnPlayersRoom.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        btnPlayersRoom.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlayersRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnPlayersRoom.setText("<html><u>Sala de jugadores</u></html>");
+        btnPlayersRoom.setOpaque(true);
+        btnPlayersRoom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPlayersRoomMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnPlayersRoom);
+        btnPlayersRoom.setBounds(160, 130, 270, 70);
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("<html><u>Armas</u></html>");
-        jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(50, 410, 220, 70);
+        btnWeapons.setBackground(new java.awt.Color(0, 0, 0));
+        btnWeapons.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        btnWeapons.setForeground(new java.awt.Color(255, 255, 255));
+        btnWeapons.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnWeapons.setText("<html><u>Armas</u></html>");
+        btnWeapons.setOpaque(true);
+        btnWeapons.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnWeaponsMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnWeapons);
+        btnWeapons.setBounds(50, 410, 220, 70);
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("<html><u>Objetos</u></html>");
-        jLabel7.setOpaque(true);
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(190, 540, 220, 70);
+        btnItems.setBackground(new java.awt.Color(0, 0, 0));
+        btnItems.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        btnItems.setForeground(new java.awt.Color(255, 255, 255));
+        btnItems.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnItems.setText("<html><u>Objetos</u></html>");
+        btnItems.setOpaque(true);
+        btnItems.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnItemsMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnItems);
+        btnItems.setBounds(190, 540, 220, 70);
 
-        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel8.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("<html><u>Armaduras</u></html>");
-        jLabel8.setOpaque(true);
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(330, 410, 220, 70);
+        btnArmor.setBackground(new java.awt.Color(0, 0, 0));
+        btnArmor.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        btnArmor.setForeground(new java.awt.Color(255, 255, 255));
+        btnArmor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnArmor.setText("<html><u>Armaduras</u></html>");
+        btnArmor.setOpaque(true);
+        btnArmor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnArmorMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnArmor);
+        btnArmor.setBounds(330, 410, 220, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/world.gif"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(790, 70, 310, 340);
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/back.png"))); // NOI18N
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnBack);
+        btnBack.setBounds(10, 10, 50, 50);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background.png"))); // NOI18N
         jPanel1.add(backgroundImage);
@@ -143,6 +179,37 @@ public class MasterMain extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPlayersRoomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayersRoomMouseClicked
+        PlayersRoom pr = new PlayersRoom();
+        pr.setVisible(true);
+    }//GEN-LAST:event_btnPlayersRoomMouseClicked
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        ProfileSelection ps = new ProfileSelection();
+        ps.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnMapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMapMouseClicked
+        Map m = new Map();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnMapMouseClicked
+
+    private void btnWeaponsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnWeaponsMouseClicked
+        GearCreation gc = new GearCreation();
+        gc.setVisible(true);
+    }//GEN-LAST:event_btnWeaponsMouseClicked
+
+    private void btnArmorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArmorMouseClicked
+        GearCreation gc = new GearCreation();
+        gc.setVisible(true);
+    }//GEN-LAST:event_btnArmorMouseClicked
+
+    private void btnItemsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnItemsMouseClicked
+        GearCreation gc = new GearCreation();
+        gc.setVisible(true);
+    }//GEN-LAST:event_btnItemsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,12 +248,13 @@ public class MasterMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundImage;
+    private javax.swing.JLabel btnArmor;
+    private javax.swing.JLabel btnBack;
+    private javax.swing.JLabel btnItems;
+    private javax.swing.JLabel btnMap;
+    private javax.swing.JLabel btnPlayersRoom;
+    private javax.swing.JLabel btnWeapons;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

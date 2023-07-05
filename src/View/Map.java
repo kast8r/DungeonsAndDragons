@@ -4,18 +4,53 @@
  */
 package View;
 
+import Model.MapListCellRenderer;
+import Model.PlayersListCellRenderer;
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author kastor
  */
-public class ProfileSelection extends javax.swing.JFrame {
+public class Map extends javax.swing.JFrame {
 
     /**
-     * Creates new form ProfileSelection
+     * Creates new form MasterMain
      */
-    public ProfileSelection() {
+    public Map() {
+         try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         setLocationRelativeTo(null);
+        
+        
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        listModel.addElement("Jugador 1");
+        listModel.addElement("Jugador 2");
+        listModel.addElement("Jugador 3");
+        playersList.setModel(listModel);
+        playersList.setOpaque(false);  
+        int verticalSpacing = 10; // Espacio vertical entre elementos (ajústalo según tus necesidades)
+        playersList.setFixedCellHeight(70);
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setViewportBorder(null);
+        jScrollPane2.setBorder(null);
+        jScrollPane2.getViewport().setOpaque(false);
+        playersList.setCellRenderer(new MapListCellRenderer());
     }
 
     /**
@@ -29,11 +64,12 @@ public class ProfileSelection extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnMaster = new javax.swing.JLabel();
-        btnPlayer = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         btnBack = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        playersList = new javax.swing.JList<>();
+        jPanel2 = new javax.swing.JPanel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -47,43 +83,13 @@ public class ProfileSelection extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(610, 0, 50, 700);
+        jSeparator1.setBounds(310, 0, 50, 700);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/book.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(780, 100, 290, 330);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/dice.png"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(130, 90, 290, 330);
-
-        btnMaster.setBackground(new java.awt.Color(0, 0, 0));
-        btnMaster.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        btnMaster.setForeground(new java.awt.Color(255, 255, 255));
-        btnMaster.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMaster.setText("<html><u>Master</u></html>");
-        btnMaster.setOpaque(true);
-        btnMaster.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMasterMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnMaster);
-        btnMaster.setBounds(850, 510, 160, 60);
-
-        btnPlayer.setBackground(new java.awt.Color(0, 0, 0));
-        btnPlayer.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        btnPlayer.setForeground(new java.awt.Color(255, 255, 255));
-        btnPlayer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnPlayer.setText("<html><u>Jugador</u></html>");
-        btnPlayer.setOpaque(true);
-        btnPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPlayerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnPlayer);
-        btnPlayer.setBounds(200, 510, 160, 60);
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel1.add(jSeparator2);
+        jSeparator2.setBounds(310, 80, 890, 30);
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/back.png"))); // NOI18N
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -93,6 +99,38 @@ public class ProfileSelection extends javax.swing.JFrame {
         });
         jPanel1.add(btnBack);
         btnBack.setBounds(10, 10, 50, 50);
+
+        jLabel9.setFont(new java.awt.Font("Bahnschrift", 1, 30)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Jugadores");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(70, 60, 170, 40);
+
+        playersList.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
+        playersList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        playersList.setOpaque(false);
+        jScrollPane2.setViewportView(playersList);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(20, 120, 270, 560);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 890, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(310, 80, 890, 620);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background.png"))); // NOI18N
         jPanel1.add(backgroundImage);
@@ -116,23 +154,9 @@ public class ProfileSelection extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMasterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMasterMouseClicked
-        MasterMain mm = new MasterMain();
-        mm.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnMasterMouseClicked
-
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        Login l = new Login();
-        l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackMouseClicked
-
-    private void btnPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayerMouseClicked
-        CharacterSelection cs = new CharacterSelection();
-        cs.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnPlayerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -151,20 +175,21 @@ public class ProfileSelection extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProfileSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProfileSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProfileSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProfileSelection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProfileSelection().setVisible(true);
+                new Map().setVisible(true);
             }
         });
     }
@@ -172,11 +197,12 @@ public class ProfileSelection extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundImage;
     private javax.swing.JLabel btnBack;
-    private javax.swing.JLabel btnMaster;
-    private javax.swing.JLabel btnPlayer;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JList<String> playersList;
     // End of variables declaration//GEN-END:variables
 }

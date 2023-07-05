@@ -37,9 +37,11 @@ public class Register extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 700));
         jPanel1.setLayout(null);
@@ -92,6 +94,15 @@ public class Register extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(90, 180, 360, 40);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/back.png"))); // NOI18N
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBackMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnBack);
+        btnBack.setBounds(10, 10, 50, 50);
+
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background.png"))); // NOI18N
         jPanel1.add(backgroundImage);
         backgroundImage.setBounds(0, 0, 1200, 700);
@@ -113,6 +124,10 @@ public class Register extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btnBackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -151,6 +166,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundImage;
+    private javax.swing.JLabel btnBack;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;

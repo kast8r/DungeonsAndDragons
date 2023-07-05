@@ -8,12 +8,12 @@ package View;
  *
  * @author kastor
  */
-public class RecoverPassword extends javax.swing.JFrame {
+public class Enemy extends javax.swing.JFrame {
 
     /**
      * Creates new form RecoverPassword
      */
-    public RecoverPassword() {
+    public Enemy() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -30,8 +30,12 @@ public class RecoverPassword extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         btnBack = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
@@ -43,28 +47,58 @@ public class RecoverPassword extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("<html><u>Enviar</u></html>");
+        jLabel2.setText("Guardar");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(570, 460, 100, 40);
+        jLabel2.setBounds(260, 610, 120, 40);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Email");
+        jLabel3.setText("Notas");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(570, 250, 90, 40);
+        jLabel3.setBounds(40, 290, 210, 40);
 
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(340, 310, 540, 40);
+        jTextField3.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField3.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(jTextField3);
+        jTextField3.setBounds(40, 230, 330, 40);
 
-        jLabel8.setFont(new java.awt.Font("Bahnschrift", 1, 48)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Recuperar contraseña");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(360, 70, 640, 60);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 780, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(420, 0, 780, 700);
+
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 1, 30)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Enemigo 1");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(130, 80, 210, 40);
+
+        jLabel5.setFont(new java.awt.Font("Bahnschrift", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Vida quitada");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(40, 180, 210, 40);
+
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(40, 340, 330, 250);
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/back.png"))); // NOI18N
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,20 +152,23 @@ public class RecoverPassword extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RecoverPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Enemy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RecoverPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Enemy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RecoverPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Enemy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RecoverPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Enemy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RecoverPassword().setVisible(true);
+                new Enemy().setVisible(true);
             }
         });
     }
@@ -141,8 +178,12 @@ public class RecoverPassword extends javax.swing.JFrame {
     private javax.swing.JLabel btnBack;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

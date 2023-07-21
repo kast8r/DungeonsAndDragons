@@ -47,7 +47,6 @@ public class CharacterSelection extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         playersList = new javax.swing.JList<>();
-        jPanel2 = new javax.swing.JPanel();
         btnBack = new javax.swing.JLabel();
         jlNew = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -70,20 +69,6 @@ public class CharacterSelection extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(20, 110, 380, 510);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(420, 0, 780, 700);
-
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/back.png"))); // NOI18N
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,6 +82,11 @@ public class CharacterSelection extends javax.swing.JFrame {
         jlNew.setForeground(new java.awt.Color(255, 255, 255));
         jlNew.setText("<html><u>Nuevo</u></html>");
         jlNew.setToolTipText("");
+        jlNew.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlNewMouseClicked(evt);
+            }
+        });
         jPanel1.add(jlNew);
         jlNew.setBounds(160, 640, 100, 40);
 
@@ -108,15 +98,13 @@ public class CharacterSelection extends javax.swing.JFrame {
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background.png"))); // NOI18N
         jPanel1.add(backgroundImage);
-        backgroundImage.setBounds(0, 0, 1200, 700);
+        backgroundImage.setBounds(0, 0, 440, 700);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +121,11 @@ public class CharacterSelection extends javax.swing.JFrame {
         ps.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void jlNewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlNewMouseClicked
+        CharacterCreationRace cc = new CharacterCreationRace();
+        cc.setVisible(true);
+    }//GEN-LAST:event_jlNewMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,7 +174,6 @@ public class CharacterSelection extends javax.swing.JFrame {
     private javax.swing.JLabel btnBack;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jlNew;
     private javax.swing.JList<String> playersList;

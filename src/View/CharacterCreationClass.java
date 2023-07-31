@@ -759,7 +759,9 @@ public class CharacterCreationClass extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMasterMouseClicked
 
     private void btnMaster1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaster1MouseClicked
-
+        Shop s = new Shop();
+        s.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMaster1MouseClicked
 
     private void lblNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNameMouseClicked
